@@ -1,0 +1,16 @@
+MTCNN là viết tắt của Multi-task Cascaded Convolutional Networks. Nó là bao gồm 3 mạng CNN xếp chồng(P-net, R-net, O-net) và đồng thời 
+hoạt động khi detect khuôn mặt. Mỗi mạng có cấu trúc khác nhau và đảm nhiệm vai trò khác nhau trong task. Đầu ra của MTCNN là vị trí khuôn 
+mặt và các điểm trên mặt như: mắt, mũi, miệng…
+
+Inception V1 hay còn gọi là mạng googlenet
+- Được tạo thành từ các inception module rất hiệu quả
+- Kết hợp các kernel khác nhau trong cùng 1 module giúp tăng số lượng thông tin từ vùng ảnh trong ảnh
+- Kiểu thiết kế thứ 1 naive version: Gồm 4 kernel để trích xuất đặc trưng ảnh: 1x1, 3x3, 5x5 và 3x3 maxpooling. Mỗi kernel đều thêm padding
+để đảm bảo đầu ra feature map có cùng kích thước để concatenate lại với nhau
+- Kiểu thiết kế thứ 2: Thêm các bottleneck(kernel size 1x1) trước khi đi qua các kernel size khác để giảm chiều sâu(số lượng phép nhân)
+
+Cosine Similarity
+- Tính độ tương đồng giữa 2 đối tượng nhờ vào công thức tính tích vô hướng 2 vector
+- Giá trị cosin luôn nằm trong khoảng [-1, 1]
+- Nếu giá trị cosine bằng 1, nghĩa là góc hợp bởi vector A và vector B là 0 độ. Tức hai vector trùng nhau. => đối tượng A, B giống nhau.
+- Ngược lại, giá trị cosine càng tiến dần về -1 thì A, B là khác nhau.
